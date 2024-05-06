@@ -75,7 +75,7 @@ class Header extends Component {
       document.getElementById("proposal").style.display = "none";
     }
   }
-  proposal(value){
+  proposal(value) {
     document.getElementById('input').value = value
     this.setState({
       proposal: false,
@@ -143,16 +143,18 @@ class Header extends Component {
           </div>
           <div className="bottom-header">
             <div className="bottom-header-item content section">
-              <div className="logo">
-                <img src={logo} />
-              </div>
+              <a href="/">
+                <div className="logo">
+                  <img src={logo} />
+                </div>
+              </a>
               <div className="form-search section">
                 <div className="menu">
                   <img src={menu} />
                 </div>
                 <form className="search-form" id="myForm">
                   <div>
-                    <input className="input-search block" id="input" onClick={(event) => this.showProposal(event)} autoComplete="off" type="search"/>
+                    <input className="input-search block" id="input" onClick={(event) => this.showProposal(event)} autoComplete="off" type="search" />
                     <div id="proposal" className="block">
                       <div className="proposal-item" onClick={(value) => this.proposal('giày nam thể thao')}>giày nam thể thao</div>
                       <div className="proposal-item" onClick={(value) => this.proposal('giày nam sneaker')}>giày nam sneaker</div>
@@ -161,7 +163,7 @@ class Header extends Component {
                       <div className="proposal-item" onClick={(value) => this.proposal('giày nam trắng')}>giày nam trắng</div>
                       <div className="proposal-item" onClick={(value) => this.proposal('giày nam nike')}>giày nam nike</div>
                       <div className="proposal-item" onClick={(value) => this.proposal('giày nam cổ cao')}>giày nam cổ cao</div>
-                      <hr/>
+                      <hr />
                       <div className="proposal-title">Tìm kiếm cửa hàng</div>
                       <div className="proposal-item" onClick={(value) => this.proposal('giày nam order')}>giày nam order</div>
                       <div className="proposal-item" onClick={(value) => this.proposal('Giày Nam 2H')}>Giày Nam 2H</div>
@@ -171,7 +173,7 @@ class Header extends Component {
                       <div className="proposal-item" onClick={(value) => this.proposal('Giày Nam FenShoes')}>Giày Nam FenShoes</div>
                       <div className="proposal-item" onClick={(value) => this.proposal('GIÀY NAM ZATA')}>GIÀY NAM ZATA</div>
                       <div className="proposal-item" onClick={(value) => this.proposal('Giày Nam ROSI')}>Giày Nam ROSI</div>
-                      <hr/>
+                      <hr />
                       <div className="proposal-title">Xu hướng tìm kiếm</div>
                       <div className="proposal-item" onClick={(value) => this.proposal('tai nghe bluetooth')}>tai nghe bluetooth</div>
                       <div className="proposal-item" onClick={(value) => this.proposal('vay tiền nhanh')}>vay tiền nhanh</div>
