@@ -9,6 +9,7 @@ import Exspand from "../../comon/component/exspand";
 import Collapse from "../../comon/component/collapse";
 import { data_filter } from "./filter";
 class Body extends Component {
+  host = "https://api-sendo-clone.vercel.app";
   numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
@@ -113,7 +114,7 @@ class Body extends Component {
       } else {
         pushArr.push(value);
       }
-      const response = await fetch("http://localhost:3001/products/"+pushArr);
+      const response = await fetch(this.host + "/products/"+pushArr);
       const product = await response.json();
       this.setState({ data: product, isLoaded: true });
       document.getElementById("ads-product").style.display = "none";
@@ -133,9 +134,9 @@ class Body extends Component {
   })
     try {
       if(this.state.conditionFilter.length != 0){
-        var response = await fetch(`http://localhost:3001/sort/${value}/${this.state.conditionFilter}`);
+        var response = await fetch(`${this.host}/sort/${value}/${this.state.conditionFilter}`);
       }else{
-        var response = await fetch(`http://localhost:3001/all/${value}`);
+        var response = await fetch(`${this.host}/all/${value}`);
       }
       const product = await response.json();
       this.setState({ data: product, isLoaded: true, sortValue: value, sortSelect: false });
@@ -148,7 +149,7 @@ class Body extends Component {
   }
   async componentDidMount() {
     try {
-      const response = await fetch("http://localhost:3001/products");
+      const response = await fetch(this.host + "/products");
       const product = await response.json();
       this.setState({ data: product, isLoaded: true });
     } catch (err) {
